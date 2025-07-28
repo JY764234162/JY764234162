@@ -29,9 +29,9 @@ jobs:
         NEXT_PUBLIC_BASE_PATH: /JY764234162
 
     - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./docs
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./docs
 
   # Deployment job
   deploy:
