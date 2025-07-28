@@ -30,7 +30,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">联系方式</h2>
             <div className="space-y-2 text-gray-700">
               <p><strong>邮箱:</strong> your-email@example.com</p>
-              <p><strong>GitHub:</strong> <a href="https://github.com/your-github-username" className="text-blue-600 hover:text-blue-800">your-github-username</a></p>
+              <p><strong>GitHub:</strong> <a href="https://github.com/JY764234162" className="text-blue-600 hover:text-blue-800">JY764234162</a></p>
               <p><strong>位置:</strong> 中国</p>
             </div>
             

@@ -2,4 +2,4 @@
 
 <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="65" height="65" /><img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="icon" width="65" height="65" /><img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="65" height="65" /><img src="https://techstack-generator.vercel.app/webpack-icon.svg" alt="icon" width="65" height="65" /><img src="https://techstack-generator.vercel.app/sass-icon.svg" alt="icon" width="65" height="65" />
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=JY764234162&show_icons=true&theme=radical)](https://github.com/ChenKun1997)
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=JY764234162&show_icons=true&theme=radical)](https://github.com/JY764234162)

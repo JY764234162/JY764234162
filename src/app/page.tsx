@@ -17,7 +17,7 @@ export default function Home() {
         title="全栈开发工程师 & AI爱好者"
         description="热衷于构建优雅的技术解决方案，专注于现代Web开发、人工智能应用和开源项目。在这里分享我的技术探索、项目经验和对未来的思考。"
         socialLinks={{
-          github: "https://github.com/jiangyi",
+          github: "https://github.com/JY764234162",
           linkedin: "https://linkedin.com/in/jiangyi",
           twitter: "https://twitter.com/jiangyi_dev",
           email: "mailto:jiangyi@example.com"

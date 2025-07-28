@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col items-center">
           <div className="flex space-x-6 mb-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/JY764234162" 
               className="text-gray-400 hover:text-gray-500"
               target="_blank"
               rel="noopener noreferrer"

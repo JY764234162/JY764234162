@@ -21,7 +21,7 @@ export default function HeroSection({
   title = "全栈开发工程师",
   description = "热爱创造优雅解决方案的技术爱好者，专注于现代Web开发和人工智能应用",
   socialLinks = {
-    github: "https://github.com",
+    github: "https://github.com/JY764234162",
     linkedin: "https://linkedin.com",
     twitter: "https://twitter.com",
     email: "mailto:hello@example.com"
@@ -260,9 +260,11 @@ export default function HeroSection({
           {/* Avatar */}
           <div className="mb-8">
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1">
-              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-                <span className="text-4xl font-bold text-white">{name[0]}</span>
-              </div>
+              <img 
+                src="https://avatars.githubusercontent.com/u/95457477" 
+                alt="JY764234162"
+                className="w-full h-full rounded-full bg-slate-900 object-cover"
+              />
             </div>
           </div>
 
