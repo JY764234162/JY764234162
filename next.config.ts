@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 import createMDX from '@next/mdx';
 import remarkGfm from 'remark-gfm';
 
@@ -8,12 +8,11 @@ const nextConfig: NextConfig = {
     mdxRs: true,
   },
   output: 'export',
-  basePath: '/JY764234162',
+  basePath: process.env.NODE_ENV === 'production' ? '/JY764234162' : '',
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
   trailingSlash: true,
-
 };
 
 const withMDX = createMDX({

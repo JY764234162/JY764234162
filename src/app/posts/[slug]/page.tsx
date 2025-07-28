@@ -14,7 +14,7 @@ interface Props {
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
   return slugs.map((slug) => ({
-    slug: slug,
+    slug: encodeURIComponent(slug),
   }));
 }
 
