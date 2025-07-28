@@ -5,9 +5,9 @@ import PostCard from '@/components/PostCard';
 import { getSortedPostsData } from '@/lib/posts';
 
 interface Props {
-  params: {
+  params: Promise<{
     tag: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const tag = decodeURIComponent(params.tag);
+  const { tag: tagParam } = await params;
+  const tag = decodeURIComponent(tagParam);
   
   return {
     title: `标签: ${tag}`,
@@ -33,7 +34,8 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function TagPage({ params }: Props) {
-  const tag = decodeURIComponent(params.tag);
+  const { tag: tagParam } = await params;
+  const tag = decodeURIComponent(tagParam);
   const posts = getSortedPostsData();
   const filteredPosts = posts.filter(post => 
     post.tags.includes(tag)

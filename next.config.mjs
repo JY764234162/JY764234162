@@ -13,6 +13,7 @@ const nextConfig = {
     unoptimized: true
   },
   trailingSlash: true,
+  distDir: 'docs',
 };
 
 const withMDX = createMDX({

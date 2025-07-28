@@ -6,9 +6,9 @@ import { formatDate } from '@/lib/posts';
 import Link from 'next/link';
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -19,7 +19,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const decodedSlug = decodeURIComponent(params.slug);
+  const { slug } = await params;
+  const decodedSlug = decodeURIComponent(slug);
   const post = getPostData(decodedSlug);
   
   return {
@@ -30,8 +31,9 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function PostPage({ params }: Props) {
   try {
+    const { slug } = await params;
     // 解码URL中的中文slug
-    const decodedSlug = decodeURIComponent(params.slug);
+    const decodedSlug = decodeURIComponent(slug);
     const post = getPostData(decodedSlug);
 
     // Import the MDX file dynamically
@@ -86,7 +88,7 @@ export default async function PostPage({ params }: Props) {
         <Footer />
       </div>
     );
-  } catch (error) {
+  } catch {
     notFound();
   }
 }

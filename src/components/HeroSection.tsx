@@ -234,12 +234,13 @@ export default function HeroSection({
 
     sceneRef.current = scene;
 
+    const currentMount = mountRef.current;
     return () => {
       renderer.setAnimationLoop(null);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (currentMount) {
+        currentMount.removeChild(renderer.domElement);
       }
       renderer.dispose();
     };
