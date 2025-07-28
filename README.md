@@ -1,129 +1,97 @@
-# 个人技术博客
+# 个人博客 - Next.js & MDX
 
-一个使用 Next.js 15 和 Tailwind CSS 构建的现代化个人博客。
+基于Next.js 15和MDX的现代化个人博客，支持中文文件名、炫酷3D粒子动画背景。
 
-## 功能特性
+## ✨ 特性
 
-- ✅ **响应式设计** - 完美适配桌面和移动设备
-- ✅ **MDX 支持** - 使用 Markdown + React 组件编写文章
-- ✅ **标签系统** - 文章分类和标签管理
-- ✅ **阅读时间** - 自动计算文章阅读时间
-- ✅ **SEO 优化** - 自动生成元数据和友好的 URL
-- ✅ **代码高亮** - 内置代码块语法高亮
-- ✅ **快速构建** - 使用 Next.js 15 和 Turbopack
+- 🚀 **Next.js 15** - 最新版本，支持App Router
+- 📝 **MDX支持** - 使用Markdown编写文章，支持React组件
+- 🎨 **3D粒子背景** - Three.js驱动的炫酷动画效果
+- 🌏 **中文支持** - 完美支持中文文件名和路由
+- 📱 **响应式设计** - 适配所有设备
+- 🎯 **TypeScript** - 类型安全开发
+- 🎭 **打字机效果** - 动态文字展示
 
-## 技术栈
+## 🚀 快速开始
 
-- **框架**: Next.js 15.4.3
-- **样式**: Tailwind CSS 4
-- **内容**: MDX (Markdown + JSX)
-- **部署**: Vercel
-- **语言**: TypeScript
-
-## 快速开始
-
-### 1. 安装依赖
+### 本地开发
 
 ```bash
+# 克隆仓库
+git clone <your-repo-url>
+cd personal-blog-mdx
+
+# 安装依赖
 npm install
-```
 
-### 2. 启动开发服务器
-
-```bash
+# 启动开发服务器
 npm run dev
 ```
 
-打开 [http://localhost:3000](http://localhost:3000) 查看博客。
+### 部署到GitHub Pages
 
-### 3. 构建生产版本
+1. **创建GitHub仓库**
+   - 在GitHub上创建一个新的公开仓库
+   - 命名为 `personal-blog-mdx` 或其他你喜欢的名称
 
-```bash
-npm run build
-npm start
-```
+2. **配置GitHub Pages**
+   - 进入仓库设置 → Pages
+   - 选择 "GitHub Actions" 作为部署源
 
-## 如何写博客文章
+3. **推送代码**
+   ```bash
+   git remote add origin https://github.com/YOUR_USERNAME/personal-blog-mdx.git
+   git branch -M main
+   git push -u origin main
+   ```
 
-### 创建新文章
+4. **自动部署**
+   - 推送代码后，GitHub Actions会自动构建并部署
+   - 部署完成后，访问 `https://YOUR_USERNAME.github.io/personal-blog-mdx`
 
-1. 在 `posts/` 目录下创建新的 `.mdx` 文件
-2. 使用以下格式作为文章模板：
+## 📝 添加新文章
+
+在 `posts/` 目录下创建新的 `.mdx` 文件：
 
 ```markdown
 ---
 title: "文章标题"
-date: "2024-07-28"
-excerpt: "文章摘要，会显示在文章卡片中"
-tags: ["标签1", "标签2", "标签3"]
+date: "2024-01-01"
+tags: ["技术", "前端"]
 ---
 
-# 文章正文
+# 文章内容
 
-这里是文章内容，支持 Markdown 和 React 组件。
-
-## 二级标题
-
-- 列表项 1
-- 列表项 2
-
-```javascript
-// 代码块
-console.log('Hello, World!');
-```
+使用标准Markdown语法编写...
 ```
 
-### 文章元数据
+## 🛠️ 技术栈
 
-- **title**: 文章标题（必填）
-- **date**: 发布日期（ISO 格式）
-- **excerpt**: 文章摘要（显示在列表页）
-- **tags**: 标签数组（用于分类）
+- **框架**: Next.js 15
+- **语言**: TypeScript
+- **样式**: Tailwind CSS 4
+- **3D动画**: Three.js
+- **构建**: MDX, Remark, Rehype
+- **部署**: GitHub Pages
 
-## 项目结构
+## 📁 项目结构
 
 ```
-src/
-├── app/                    # Next.js 应用目录
-│   ├── posts/[slug]/      # 文章详情页
-│   ├── about/             # 关于页面
-│   ├── tags/              # 标签页面
-│   └── globals.css        # 全局样式
-├── components/            # React 组件
-│   ├── Header.tsx         # 头部导航
-│   ├── Footer.tsx         # 页脚
-│   └── PostCard.tsx       # 文章卡片
-├── lib/                   # 工具函数
-│   └── posts.ts          # 文章数据处理
-posts/                    # 博客文章目录
-├── 欢迎访问我的博客.mdx
-└── nextjs-15-新特性介绍.mdx
+├── posts/              # 博客文章
+├── src/
+│   ├── app/           # Next.js App Router
+│   ├── components/    # React组件
+│   │   ├── HeroSection.tsx    # 3D主页
+│   │   ├── PostCard.tsx       # 文章卡片
+│   │   └── Typewriter.tsx     # 打字机效果
+│   └── lib/           # 工具函数
+└── public/            # 静态资源
 ```
 
-## 自定义配置
+## 🤝 贡献
 
-### 修改博客信息
+欢迎提交Issue和Pull Request！
 
-编辑 `src/components/Header.tsx` 和 `src/components/Footer.tsx` 来更新博客名称、社交媒体链接等信息。
+## 📄 许可证
 
-### 添加新页面
-
-在 `src/app/` 目录下创建新的文件夹和 `page.tsx` 文件来添加新页面。
-
-### 样式定制
-
-编辑 `src/app/globals.css` 来自定义样式和主题。
-
-## 部署到 Vercel
-
-1. 推送代码到 GitHub
-2. 在 [Vercel](https://vercel.com) 上导入项目
-3. 部署！
-
-## 许可证
-
-MIT License - 详见 [LICENSE](LICENSE) 文件
-
-## 贡献
-
-欢迎提交 Issue 和 Pull Request 来改进这个博客！
+MIT License
