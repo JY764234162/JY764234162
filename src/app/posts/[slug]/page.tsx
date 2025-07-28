@@ -14,12 +14,13 @@ interface Props {
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
   return slugs.map((slug) => ({
-    slug,
+    slug: slug,
   }));
 }
 
 export async function generateMetadata({ params }: Props) {
-  const post = getPostData(params.slug);
+  const decodedSlug = decodeURIComponent(params.slug);
+  const post = getPostData(decodedSlug);
   
   return {
     title: post.title,
@@ -29,10 +30,12 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function PostPage({ params }: Props) {
   try {
-    const post = getPostData(params.slug);
+    // 解码URL中的中文slug
+    const decodedSlug = decodeURIComponent(params.slug);
+    const post = getPostData(decodedSlug);
 
     // Import the MDX file dynamically
-    const { default: PostContent } = await import(`../../../../posts/${params.slug}.mdx`);
+    const { default: PostContent } = await import(`../../../../posts/${decodedSlug}.mdx`);
 
     return (
       <div className="min-h-screen bg-gray-50">
