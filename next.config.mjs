@@ -8,7 +8,6 @@ const nextConfig = {
     mdxRs: true,
   },
   output: 'export',
-  basePath: '/JY764234162',
   images: {
     unoptimized: true
   },
