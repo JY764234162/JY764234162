@@ -1,0 +1,58 @@
+---
+title: "Next.js 15 新特性介绍"
+date: "2024-07-27"
+excerpt: "深入探讨 Next.js 15 带来的激动人心的新特性，包括部分预渲染、服务端组件优化等。"
+tags: ["Next.js", "React", "前端"]
+---
+
+# Next.js 15 新特性介绍
+
+Next.js 15 带来了许多令人兴奋的新特性，让开发者能够构建更快、更强大的 Web 应用。
+
+## 主要新特性
+
+### 1. 部分预渲染 (Partial Prerendering)
+
+部分预渲染结合了 SSR 和 SSG 的优势，允许你指定哪些部分需要动态渲染。
+
+```typescript
+// 使用部分预渲染
+export const experimental_ppr = true;
+
+async function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <Suspense fallback={<Loading />}>
+        <UserProfile />
+      </Suspense>
+    </div>
+  );
+}
+```
+
+### 2. 服务端组件优化
+
+服务端组件现在支持更多的 React 特性，包括：
+
+- `use server` 指令
+- 更好的错误处理
+- 改进的开发体验
+
+### 3. 性能提升
+
+- 更快的构建时间
+- 优化的包大小
+- 改进的缓存策略
+
+## 实际应用
+
+这些新特性让我们能够：
+
+1. **提升用户体验**: 更快的页面加载速度
+2. **简化开发**: 更直观的 API 设计
+3. **优化性能**: 智能的渲染策略
+
+## 总结
+
+Next.js 15 的发布标志着现代 Web 开发的新里程碑，为开发者提供了更强大的工具来构建高性能应用。
