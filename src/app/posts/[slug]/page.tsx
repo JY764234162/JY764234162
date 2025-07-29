@@ -43,7 +43,7 @@ export default async function PostPage({ params }: Props) {
       <div className="min-h-screen bg-gray-50">
         <Header />
         
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-28">
           <Link 
             href="/"
             className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8"
