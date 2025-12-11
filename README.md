@@ -12,13 +12,13 @@
 
 ```typescript
 const jiangyi = {
-  name: '江一',
-  role: '全栈开发工程师 & AI爱好者',
-  location: '中国',
-  interests: ['前端开发', '3D可视化', 'AI应用', '开源项目'],
-  currentlyLearning: ['Next.js 15', 'Three.js', 'AI Integration'],
-  lookingFor: 'Collaboration on innovative projects',
-  funFact: '热爱构建优雅的技术解决方案',
+  name: "江一",
+  role: "全栈开发工程师 & AI爱好者",
+  location: "中国",
+  interests: ["前端开发", "3D可视化", "AI应用", "开源项目"],
+  currentlyLearning: ["Next.js 15", "Three.js", "AI Integration"],
+  lookingFor: "Collaboration on innovative projects",
+  funFact: "热爱构建优雅的技术解决方案"
 };
 ```
 
@@ -27,7 +27,6 @@ const jiangyi = {
 ## 🚀 Tech Stack
 
 ### Frontend
-
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -36,7 +35,6 @@ const jiangyi = {
 ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
 
 ### Tools & Others
-
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![MDX](https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white)
@@ -47,12 +45,11 @@ const jiangyi = {
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=JY764234162&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JY764234162&layout=compact&langs_count=8&theme=radical"/>
-</div>
+  
+| <img align="center" src="https://github-readme-stats.vercel.app/api?username=JY764234162&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=FFFFFF&include_all_commits=true&count_private=true" alt="GitHub Stats" /> | <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JY764234162&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&langs_count=8" alt="Top Languages" /> |
+|:---:|:---:|
+| <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=JY764234162&theme=radical&hide_border=true&background=0D1117&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF" alt="GitHub Streak" /> | <img align="center" src="https://github-readme-activity-graph.vercel.app/graph?username=JY764234162&theme=redical&hide_border=true&bg_color=0D1117&color=00D9FF&line=00D9FF&point=00D9FF" alt="Contribution Graph" /> |
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=JY764234162&theme=radical" alt="GitHub Streak" />
 </div>
 
 ---
@@ -60,7 +57,6 @@ const jiangyi = {
 ## 🎯 Featured Projects
 
 ### 🌟 Personal Blog - Next.js & MDX
-
 **技术栈**: Next.js 15 | React 19 | TypeScript | Tailwind CSS | Three.js | MDX
 
 - ✨ 3D 粒子动画背景
@@ -103,3 +99,4 @@ const jiangyi = {
   <img src="https://techstack-generator.vercel.app/webpack-icon.svg" alt="icon" width="65" height="65" />
   <img src="https://techstack-generator.vercel.app/sass-icon.svg" alt="icon" width="65" height="65" />
 </div>
+
