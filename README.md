@@ -46,9 +46,11 @@ const jiangyi = {
 
 <div align="center">
   
-| <img align="center" src="https://github-readme-stats.vercel.app/api?username=JY764234162&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=FFFFFF&include_all_commits=true&count_private=true" alt="GitHub Stats" /> | <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JY764234162&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&langs_count=8" alt="Top Languages" /> |
-|:---:|:---:|
-| <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=JY764234162&theme=radical&hide_border=true&background=0D1117&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF" alt="GitHub Streak" /> | <img align="center" src="https://github-readme-activity-graph.vercel.app/graph?username=JY764234162&theme=redical&hide_border=true&bg_color=0D1117&color=00D9FF&line=00D9FF&point=00D9FF" alt="Contribution Graph" /> |
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=JY764234162&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=FFFFFF&include_all_commits=true&count_private=true)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=JY764234162&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00D9FF&langs_count=8)
+
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=JY764234162&theme=radical&hide_border=true&background=0D1117&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF)
 
 </div>
 
