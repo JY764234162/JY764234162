@@ -13,12 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JY764234162的技术博客 - 前端开发与技术分享",
-  description: "JY764234162的个人技术博客，分享前端开发、React、Next.js、Canvas、Node.js等技术文章和实战经验。",
-  keywords: ["江一", "JiangYi", "前端开发", "React", "Next.js", "Canvas", "Node.js", "技术博客", "JavaScript", "TypeScript"],
-  authors: [{ name: "JY764234162" }],
-  creator: "JY764234162",
-  publisher: "JY764234162",
+  title: "江一 | 全栈工程师 & AI 开发者",
+  description: "江一的个人技术博客，专注 Go、Python 后端开发，React/Next.js 前端工程，以及 AI 应用开发。分享技术文章、项目经验与开发心得。",
+  keywords: ["江一", "全栈工程师", "Go", "Python", "AI 开发", "React", "Next.js", "技术博客", "人工智能", "LLM"],
+  authors: [{ name: "江一" }],
+  creator: "江一",
+  publisher: "江一",
   formatDetection: {
     email: false,
     address: false,
@@ -29,16 +29,16 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "JY764234162的技术博客 - 前端开发与技术分享",
-    description: "分享前端开发、React、Next.js、Canvas、Node.js等技术文章和实战经验",
+    title: "江一 | 全栈工程师 & AI 开发者",
+    description: "专注 Go、Python、AI 应用开发的技术博客，分享全栈技术与人工智能实战经验",
     url: "https://jy764234162.github.io",
-    siteName: "JY764234162的技术博客",
+    siteName: "江一的技术博客",
     images: [
       {
         url: "https://jy764234162.github.io/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "JY764234162的技术博客",
+        alt: "江一的技术博客",
       },
     ],
     locale: "zh_CN",
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JY764234162的技术博客 - 前端开发与技术分享",
-    description: "分享前端开发、React、Next.js、Canvas、Node.js等技术文章和实战经验",
+    title: "江一 | 全栈工程师 & AI 开发者",
+    description: "专注 Go、Python、AI 应用开发的技术博客",
     images: ["https://jy764234162.github.io/twitter-image.jpg"],
     creator: "@JY764234162",
   },
@@ -62,9 +62,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
 };
 
 export default function RootLayout({
@@ -78,43 +75,45 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/icon-192x192.png" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#050508" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="JY764234162博客" />
-        <meta name="application-name" content="JY764234162的技术博客" />
-        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="江一的博客" />
+        <meta name="application-name" content="江一的技术博客" />
+        <meta name="msapplication-TileColor" content="#050508" />
         <meta name="msapplication-TileImage" content="/icon-192x192.png" />
         <link rel="canonical" href="https://jy764234162.github.io" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#050508] text-white`}
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "江一 (JY764234162)",
-            "alternateName": ["江一", "JiangYi", "JY764234162"],
-            "url": "https://jy764234162.github.io",
-            "image": "https://jy764234162.github.io/avatar.jpg",
-            "description": "前端开发工程师江一，专注于React、Next.js、Canvas和Node.js技术分享",
-            "jobTitle": "前端开发工程师",
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "江一",
+              "alternateName": ["江一", "JiangYi", "JY764234162"],
+              "url": "https://jy764234162.github.io",
+              "image": "https://jy764234162.github.io/avatar.jpg",
+              "description": "全栈工程师 & AI 开发者，专注于 Go、Python、React、Next.js 和人工智能应用开发",
+              "jobTitle": "全栈工程师",
               "sameAs": [
                 "https://github.com/JY764234162",
                 "https://jy764234162.github.io"
               ],
               "knowsAbout": [
+                "Go",
+                "Python",
                 "React",
                 "Next.js",
-                "JavaScript",
                 "TypeScript",
-                "Canvas",
-                "Node.js",
-                "前端开发",
+                "Tailwind CSS",
+                "人工智能",
+                "LLM",
+                "全栈开发",
                 "Web开发"
               ]
             })
@@ -124,11 +123,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "江一的技术博客 (JiangYi's Tech Blog)",
-            "alternateName": ["江一博客", "JiangYi Blog", "JY764234162技术博客"],
-            "description": "前端开发工程师江一的个人技术博客，分享React、Next.js、Canvas、Node.js等技术文章和实战经验",
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "江一的技术博客",
+              "alternateName": ["江一博客", "JiangYi Blog"],
+              "description": "全栈工程师江一的个人技术博客，分享 Go、Python、AI 开发等技术文章和实战经验",
               "url": "https://jy764234162.github.io",
               "potentialAction": {
                 "@type": "SearchAction",
