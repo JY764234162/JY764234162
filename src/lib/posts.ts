@@ -1,18 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { format } from 'date-fns';
-import { zhCN } from 'date-fns/locale';
+import { Post } from './types';
 
-export type Post = {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  content: string;
-  tags: string[];
-  readingTime: string;
-};
+export type { Post };
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -68,6 +59,3 @@ export function getPostData(slug: string): Post {
   };
 }
 
-export function formatDate(dateString: string): string {
-  return format(new Date(dateString), 'yyyy年MM月dd日', { locale: zhCN });
-}
