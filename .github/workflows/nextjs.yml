@@ -38,10 +38,7 @@ jobs:
   # 构建作业：负责构建Next.js项目
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18, 20]  # 支持多个Node.js版本
-    
+
     steps:
       # 1. 检出代码
       - name: 检出代码
@@ -79,7 +76,7 @@ jobs:
       - name: 设置Node.js环境
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
       # 4. 安装pnpm（如使用）
