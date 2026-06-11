@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'feat: add tech article posts and redesign timeline with SVG curves *)"
+    ]
+  }
+}

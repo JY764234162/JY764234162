@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Code2, Globe, Brain, Zap } from 'lucide-react';
 
@@ -56,13 +57,98 @@ const events: TimelineEvent[] = [
 ];
 
 export default function TechTimeline() {
-  return (
-    <div className="relative">
-      {/* Desktop vertical line - centered */}
-      <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-px bg-gradient-to-b from-[#00f0ff]/50 via-[#bd00ff]/50 to-[#ff0080]/50" />
+  const containerRef = useRef<HTMLDivElement>(null);
+  const nodeRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [pathD, setPathD] = useState('');
 
-      {/* Mobile vertical line - left aligned */}
-      <div className="md:hidden absolute left-[23px] top-0 bottom-0 w-px bg-gradient-to-b from-[#00f0ff]/50 via-[#bd00ff]/50 to-[#ff0080]/50" />
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    const calcPath = () => {
+      const container = containerRef.current;
+      if (!container) return;
+      const containerRect = container.getBoundingClientRect();
+
+      const points = nodeRefs.current
+        .map((ref) => {
+          if (!ref || !ref.isConnected) return null;
+          const rect = ref.getBoundingClientRect();
+          if (rect.width === 0 || rect.height === 0) return null;
+          return {
+            x: rect.left + rect.width / 2 - containerRect.left,
+            y: rect.top + rect.height / 2 - containerRect.top,
+          };
+        })
+        .filter((p): p is { x: number; y: number } => p !== null);
+
+      if (points.length < 2) return;
+
+      let d = `M ${points[0].x} ${points[0].y}`;
+      for (let i = 1; i < points.length; i++) {
+        const prev = points[i - 1];
+        const curr = points[i];
+        const midY = (prev.y + curr.y) / 2;
+        const offset = 12 * (i % 2 === 1 ? 1 : -1);
+        d += ` C ${prev.x + offset} ${midY}, ${curr.x + offset} ${midY}, ${curr.x} ${curr.y}`;
+      }
+
+      setPathD(d);
+    };
+
+    const debouncedCalcPath = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(calcPath, 100);
+    };
+
+    calcPath();
+
+    const observer = new ResizeObserver(debouncedCalcPath);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    window.addEventListener('scroll', debouncedCalcPath, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', debouncedCalcPath);
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  return (
+    <div ref={containerRef} className="relative">
+      {/* SVG curved timeline */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        style={{ overflow: 'visible' }}
+      >
+        <defs>
+          <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.6" />
+            <stop offset="50%" stopColor="#bd00ff" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#ff0080" stopOpacity="0.6" />
+          </linearGradient>
+          <filter id="lineGlow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        {pathD && (
+          <path
+            d={pathD}
+            stroke="url(#timelineGradient)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            fill="none"
+            opacity="0.8"
+            filter="url(#lineGlow)"
+          />
+        )}
+      </svg>
 
       <div className="space-y-10 md:space-y-12">
         {events.map((event, index) => {
@@ -86,7 +172,10 @@ export default function TechTimeline() {
                 </div>
 
                 {/* Center icon */}
-                <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                <div
+                  ref={(el) => { nodeRefs.current[index * 2] = el; }}
+                  className="absolute left-1/2 -translate-x-1/2 z-10"
+                >
                   <TimelineIcon event={event} Icon={Icon} />
                 </div>
 
@@ -97,7 +186,10 @@ export default function TechTimeline() {
               {/* Mobile: single column layout */}
               <div className="md:hidden flex items-start gap-4">
                 {/* Icon column */}
-                <div className="flex-shrink-0 z-10">
+                <div
+                  ref={(el) => { nodeRefs.current[index * 2 + 1] = el; }}
+                  className="flex-shrink-0 z-10"
+                >
                   <TimelineIcon event={event} Icon={Icon} />
                 </div>
 
@@ -119,9 +211,9 @@ function TimelineIcon({ event, Icon }: { event: TimelineEvent; Icon: React.Eleme
     <div
       className="w-12 h-12 rounded-full flex items-center justify-center border-2"
       style={{
-        backgroundColor: `${event.color}15`,
+        backgroundColor: '#0a0a12',
         borderColor: `${event.color}50`,
-        boxShadow: `0 0 20px ${event.color}20`,
+        boxShadow: `0 0 20px ${event.color}30, inset 0 0 10px ${event.color}10`,
       }}
     >
       <Icon className="w-5 h-5" style={{ color: event.color }} />
