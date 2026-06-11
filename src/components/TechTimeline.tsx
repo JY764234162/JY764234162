@@ -58,10 +58,13 @@ const events: TimelineEvent[] = [
 export default function TechTimeline() {
   return (
     <div className="relative">
-      {/* Vertical line */}
-      <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#00f0ff]/50 via-[#bd00ff]/50 to-[#ff0080]/50 md:-translate-x-px" />
+      {/* Desktop vertical line - centered */}
+      <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-px bg-gradient-to-b from-[#00f0ff]/50 via-[#bd00ff]/50 to-[#ff0080]/50" />
 
-      <div className="space-y-12">
+      {/* Mobile vertical line - left aligned */}
+      <div className="md:hidden absolute left-[23px] top-0 bottom-0 w-px bg-gradient-to-b from-[#00f0ff]/50 via-[#bd00ff]/50 to-[#ff0080]/50" />
+
+      <div className="space-y-10 md:space-y-12">
         {events.map((event, index) => {
           const isLeft = index % 2 === 0;
           const Icon = event.icon;
@@ -69,66 +72,92 @@ export default function TechTimeline() {
           return (
             <motion.div
               key={event.year}
-              initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative flex items-start gap-6 md:gap-0 ${
-                isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
-              }`}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative"
             >
-              {/* Content card */}
-              <div className={`flex-1 md:w-1/2 ${isLeft ? 'md:pr-12' : 'md:pl-12'}`}>
-                <div className="bg-[#0a0a12] border border-[#00f0ff]/10 rounded-xl p-5 hover:border-[#00f0ff]/20 transition-all duration-300 group">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span
-                      className="text-2xl font-bold"
-                      style={{ color: event.color }}
-                    >
-                      {event.year}
-                    </span>
-                    <h3 className="text-lg font-semibold text-white">{event.title}</h3>
-                  </div>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-3">
-                    {event.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {event.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 rounded-full text-xs font-medium border"
-                        style={{
-                          backgroundColor: `${event.color}10`,
-                          color: event.color,
-                          borderColor: `${event.color}30`,
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+              {/* Desktop: alternating left/right layout */}
+              <div className={`hidden md:flex items-start gap-0 ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
+                {/* Content card */}
+                <div className={`w-1/2 ${isLeft ? 'pr-10' : 'pl-10'}`}>
+                  <TimelineCard event={event} />
                 </div>
+
+                {/* Center icon */}
+                <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                  <TimelineIcon event={event} Icon={Icon} />
+                </div>
+
+                {/* Empty spacer */}
+                <div className="w-1/2" />
               </div>
 
-              {/* Center icon - mobile left, desktop center */}
-              <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center border-2"
-                  style={{
-                    backgroundColor: `${event.color}15`,
-                    borderColor: `${event.color}50`,
-                    boxShadow: `0 0 20px ${event.color}20`,
-                  }}
-                >
-                  <Icon className="w-5 h-5" style={{ color: event.color }} />
+              {/* Mobile: single column layout */}
+              <div className="md:hidden flex items-start gap-4">
+                {/* Icon column */}
+                <div className="flex-shrink-0 z-10">
+                  <TimelineIcon event={event} Icon={Icon} />
+                </div>
+
+                {/* Content card */}
+                <div className="flex-1 min-w-0 pt-1">
+                  <TimelineCard event={event} />
                 </div>
               </div>
-
-              {/* Spacer for opposite side */}
-              <div className="hidden md:block md:w-1/2" />
             </motion.div>
           );
         })}
+      </div>
+    </div>
+  );
+}
+
+function TimelineIcon({ event, Icon }: { event: TimelineEvent; Icon: React.ElementType }) {
+  return (
+    <div
+      className="w-12 h-12 rounded-full flex items-center justify-center border-2"
+      style={{
+        backgroundColor: `${event.color}15`,
+        borderColor: `${event.color}50`,
+        boxShadow: `0 0 20px ${event.color}20`,
+      }}
+    >
+      <Icon className="w-5 h-5" style={{ color: event.color }} />
+    </div>
+  );
+}
+
+function TimelineCard({ event }: { event: TimelineEvent }) {
+  return (
+    <div className="bg-[#0a0a12] border border-[#00f0ff]/10 rounded-xl p-5 hover:border-[#00f0ff]/20 transition-all duration-300 group">
+      <div className="flex items-center gap-3 mb-3">
+        <span
+          className="text-2xl font-bold"
+          style={{ color: event.color }}
+        >
+          {event.year}
+        </span>
+        <h3 className="text-lg font-semibold text-white">{event.title}</h3>
+      </div>
+      <p className="text-gray-400 text-sm leading-relaxed mb-3">
+        {event.description}
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {event.tags.map((tag) => (
+          <span
+            key={tag}
+            className="px-2 py-0.5 rounded-full text-xs font-medium border"
+            style={{
+              backgroundColor: `${event.color}10`,
+              color: event.color,
+              borderColor: `${event.color}30`,
+            }}
+          >
+            {tag}
+          </span>
+        ))}
       </div>
     </div>
   );
