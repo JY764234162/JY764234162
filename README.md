@@ -13,12 +13,24 @@
 ```typescript
 const jiangyi = {
   name: "江一",
-  role: "全栈开发工程师 & AI爱好者",
+  role: "全栈开发工程师 & AI 架构师",
   location: "中国",
-  interests: ["前端开发", "3D可视化", "AI应用", "开源项目"],
-  currentlyLearning: ["Next.js 15", "Three.js", "AI Integration"],
-  lookingFor: "Collaboration on innovative projects",
-  funFact: "热爱构建优雅的技术解决方案"
+  interests: [
+    "高并发微服务架构",
+    "LLM 应用开发",
+    "多智能体系统 (Multi-Agent)",
+    "云原生 & DevOps",
+    "3D 可视化"
+  ],
+  expertise: [
+    "Go 高并发后端",
+    "React/Next.js 前端工程化",
+    "LangChain / LangGraph 智能体编排",
+    "Docker + K8s 云原生部署"
+  ],
+  currentlyLearning: ["分布式系统", "AI Agent 框架", "LLM 推理优化"],
+  lookingFor: "有挑战性的全栈 + AI 项目合作",
+  funFact: "能用 Go 写微服务，也能用 Three.js 做粒子特效"
 };
 ```
 
@@ -34,6 +46,16 @@ const jiangyi = {
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
 
+### Backend & Cloud Native
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![gRPC](https://img.shields.io/badge/gRPC-244c5a?style=for-the-badge&logo=grpc&logoColor=white)
+
 ### AI & LLM
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
@@ -43,9 +65,10 @@ const jiangyi = {
 
 ### Tools & Others
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 ![MDX](https://img.shields.io/badge/MDX-1B1F24?style=for-the-badge&logo=mdx&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
 ---
 
@@ -65,14 +88,21 @@ const jiangyi = {
 
 ## 🎯 Featured Projects
 
-### 🌟 Personal Blog - Next.js & MDX
+### 🌟 Personal Blog — 全栈技术博客
 **技术栈**: Next.js 15 | React 19 | TypeScript | Tailwind CSS | Three.js | MDX
 
-- ✨ 3D 粒子动画背景
-- 📝 MDX 文章支持
-- 🌏 完美中文支持
-- 📱 响应式设计
-- 🎨 现代化 UI/UX
+- ✨ Three.js 3D 粒子动画 Hero 背景
+- 📝 MDX 内容驱动，支持代码高亮与自定义组件
+- 🤖 深度覆盖 LLM / LangChain / Agent 技术文章
+- 🌏 完美中文排版与 SEO 优化
+- 📱 响应式设计，支持深色赛博朋克主题
+
+### 🤖 AI Agent 技术探索
+聚焦大语言模型应用与多智能体系统架构：
+
+- **LangGraph 工作流编排** — 构建复杂的多步骤 Agent 推理链
+- **RAG 知识增强** — 结合向量数据库实现私有知识库问答
+- **Multi-Agent 协作** — 探索 Supervisor、Hierarchical 等经典协作模式
 
 ---
 
