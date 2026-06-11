@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TechTimeline from '@/components/TechTimeline';
 import { Mail, MapPin, Briefcase, GraduationCap, Heart } from 'lucide-react';
-import { GitHubIcon } from '@/components/icons';
+import { GitHubIcon, TwitterIcon } from '@/components/icons';
 
 export const metadata: Metadata = {
   title: '关于我 | 江一',
@@ -85,7 +85,7 @@ export default function AboutPage() {
                   相信技术改变世界，代码创造价值。
                 </p>
 
-                <div className="flex justify-center md:justify-start gap-3">
+                <div className="flex flex-wrap justify-center md:justify-start gap-3">
                   <a
                     href="https://github.com/JY764234162"
                     target="_blank"
@@ -100,7 +100,16 @@ export default function AboutPage() {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#bd00ff]/5 text-[#bd00ff] border border-[#bd00ff]/20 hover:bg-[#bd00ff]/10 transition-all text-sm"
                   >
                     <Mail className="w-4 h-4" />
-                    联系我
+                    邮箱
+                  </a>
+                  <a
+                    href="https://twitter.com/jiangyi_dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#ff0080]/5 text-[#ff0080] border border-[#ff0080]/20 hover:bg-[#ff0080]/10 transition-all text-sm"
+                  >
+                    <TwitterIcon className="w-4 h-4" />
+                    Twitter
                   </a>
                 </div>
               </div>

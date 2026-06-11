@@ -1,14 +1,18 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, Heart } from 'lucide-react';
+import { Mail, Heart, MessageCircle, Play, BookOpen } from 'lucide-react';
 import { GitHubIcon, TwitterIcon } from './icons';
+import { socialLinks } from '@/lib/social';
 
-const socialLinks = [
-  { href: 'https://github.com/JY764234162', icon: 'github' as const, label: 'GitHub' },
-  { href: 'mailto:jiangyi@example.com', icon: 'mail' as const, label: 'Email' },
-  { href: 'https://twitter.com/jiangyi_dev', icon: 'twitter' as const, label: 'Twitter' },
-];
+const iconMap: Record<string, React.ReactNode> = {
+  github: <GitHubIcon className="w-5 h-5" />,
+  twitter: <TwitterIcon className="w-5 h-5" />,
+  email: <Mail className="w-5 h-5" />,
+  wechat: <MessageCircle className="w-5 h-5" />,
+  bilibili: <Play className="w-5 h-5" />,
+  zhihu: <BookOpen className="w-5 h-5" />,
+};
 
 const footerLinks = [
   { href: '/', label: '首页' },
@@ -61,16 +65,15 @@ export default function Footer() {
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
                 <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  key={link.name}
+                  href={link.url}
+                  target={link.url.startsWith('mailto') || link.url === '#' ? undefined : '_blank'}
+                  rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#00f0ff]/5 border border-[#00f0ff]/10 text-gray-400 hover:text-[#00f0ff] hover:border-[#00f0ff]/30 hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] transition-all duration-300"
                   aria-label={link.label}
+                  title={link.label}
                 >
-                  {link.icon === 'github' && <GitHubIcon className="w-5 h-5" />}
-                  {link.icon === 'twitter' && <TwitterIcon className="w-5 h-5" />}
-                  {link.icon === 'mail' && <Mail className="w-5 h-5" />}
+                  {iconMap[link.name]}
                 </a>
               ))}
             </div>
