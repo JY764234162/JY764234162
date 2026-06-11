@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npm run *)",
       "Bash(git add *)",
-      "Bash(git commit -m 'feat: add tech article posts and redesign timeline with SVG curves *)"
+      "Bash(git commit -m 'feat: add tech article posts and redesign timeline with SVG curves *)",
+      "Bash(git push *)",
+      "Bash(git commit -m 'fix: avatar path with basePath and update README tech stack *)"
     ]
   }
 }

@@ -97,7 +97,7 @@ export default function RootLayout({
               "name": "江一",
               "alternateName": ["江一", "JiangYi", "JY764234162"],
               "url": "https://jy764234162.github.io",
-              "image": "https://jy764234162.github.io/avatar.jpg",
+              "image": "https://jy764234162.github.io/JY764234162/avatar.jpeg",
               "description": "全栈工程师 & AI 开发者，专注于 Go、Python、React、Next.js 和人工智能应用开发",
               "jobTitle": "全栈工程师",
               "sameAs": [

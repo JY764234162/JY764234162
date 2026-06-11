@@ -254,7 +254,7 @@ export default function HeroSection() {
           <div className="w-28 h-28 mx-auto rounded-full p-[2px] bg-gradient-to-r from-[#00f0ff] via-[#bd00ff] to-[#ff0080] animate-glow-pulse"
           >
             <img
-              src="/avatar.jpeg"
+              src={process.env.NODE_ENV === 'production' ? '/JY764234162/avatar.jpeg' : '/avatar.jpeg'}
               alt="江一"
               className="w-full h-full rounded-full bg-[#050508] object-cover"
             />

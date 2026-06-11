@@ -51,7 +51,7 @@ export default function AboutPage() {
               <div className="flex-shrink-0">
                 <div className="w-32 h-32 rounded-full p-[2px] bg-gradient-to-r from-[#00f0ff] via-[#bd00ff] to-[#ff0080]">
                   <img
-                    src="/avatar.jpeg"
+                    src={process.env.NODE_ENV === 'production' ? '/JY764234162/avatar.jpeg' : '/avatar.jpeg'}
                     alt="江一"
                     className="w-full h-full rounded-full bg-[#050508] object-cover"
                   />
